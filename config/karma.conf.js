@@ -1,4 +1,4 @@
-const webpackConfig = require('./webpack.test');
+const webpackConfig = require('./webpack.test')
 
 module.exports = config => {
   const conf = {
@@ -7,21 +7,21 @@ module.exports = config => {
     frameworks: ['jasmine'],
 
     files: [
-      { pattern: './config/karma-test-shim.js', watched: false },
+      { pattern: './config/karma-test-shim.js', watched: false }
     ],
 
     preprocessors: {
-      './config/karma-test-shim.js': ['webpack', 'sourcemap'],
+      './config/karma-test-shim.js': ['webpack', 'sourcemap']
     },
 
     webpack: webpackConfig,
 
     webpackMiddleware: {
-      stats: 'errors-only',
+      stats: 'errors-only'
     },
 
     webpackServer: {
-      noInfo: true,
+      noInfo: true
     },
 
     reporters: ['progress'],
@@ -30,8 +30,8 @@ module.exports = config => {
     logLevel: config.LOG_INFO,
     autoWatch: false,
     browsers: ['PhantomJS'],
-    singleRun: true,
-  };
+    singleRun: true
+  }
 
-  config.set(conf);
-};
+  config.set(conf)
+}
